@@ -13,7 +13,7 @@ public class PlayWithInheritance
 	public static int DYNAMIC_METHOD_LOOKUP = 5;
 	public static int OVERRIDING_STATIC = 6;
 	
-	public static int RUN_EXAMPLE = DYNAMIC_METHOD_LOOKUP; // change this to try different behaviors
+	public static int RUN_EXAMPLE = OVERRIDING_STATIC; // change this to try different behaviors
 										// below
 
 	public static void main(String[] args)
@@ -88,16 +88,22 @@ public class PlayWithInheritance
 		}
 		else if (RUN_EXAMPLE == OVERRIDING_STATIC)
 		{
-			Die another = new Die();
+			Die die;
+			CrookedDie1 crookeddie1 = new CrookedDie1();
+			die = crookeddie1;
+			StdOut.println(die.testStatic());
+			
+			
+			//Die another = new Die();
 
-			Dice dice = new Dice(aSingleDie, crooked1); // we'll try
+			//Dice dice = new Dice(aSingleDie, crooked1); // we'll try
 														// substituting here
 
-			dice.roll();
+			//dice.roll();
 
-			int result = dice.getLastRoll();
+			//int result = dice.getLastRoll();
 
-			StdOut.printf("Roll of '%s' and '%s' is: %d.\n", aSingleDie, crooked1, result);
+			//StdOut.printf("Roll of '%s' and '%s' is: %d.\n", aSingleDie, crooked1, result);
 		}
 
 		StdOut.println();
